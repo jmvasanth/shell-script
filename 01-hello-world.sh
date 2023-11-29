@@ -1,8 +1,8 @@
 #! /bin/bash
 echo "This is my first shell script"
 
-PERSON1=Ramesh
-PERSON2=Suresh
+PERSON1=Rohit
+PERSON2=Sachin
 
 echo "$PERSON1: Hi $PERSON2, Good Morning"
 echo "$PERSON2: Good Morning $PERSON1"
