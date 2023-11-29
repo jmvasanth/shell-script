@@ -1,7 +1,10 @@
 #! /bin/bash
 echo "This is my first shell script"
 
-echo "Ramesh: Hi Suresh, Good Morning"
-echo "Suresh: Good Morning Ramesh"
-echo "Ramesh: How are doing Suresh"
-echo "Suresh: I am doing good Ramesh"
+PERSON1=Ramesh
+PERSON2=Suresh
+
+echo "$PERSON1: Hi $PERSON2, Good Morning"
+echo "$PERSON2: Good Morning $PERSON1"
+echo "$PERSON1: How are doing $PERSON2"
+echo "$PERSON2: I am doing good $PERSON1"
