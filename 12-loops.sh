@@ -30,6 +30,12 @@ VALIDATE (){
 
 for i in $@
 do
+    if rpm -q $i &> /dev/null
+    then
+        echo -e "$Y $i package is already installed $N"
+    exit 1
+    else
     yum install $i -y &>>$LOGFILE
     VALIDATE $? "Installing $i"
+    fi
 done
