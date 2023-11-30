@@ -1,8 +1,9 @@
 #! /bin/bash
 
 # Script to install mysql and postfix
-
-USERID=$(id -u)
+DATE=$(date +%F)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 
 #This functions will validate the previous command
 VALIDATE (){
@@ -13,6 +14,7 @@ VALIDATE (){
         echo "$2 .... SUCCESS"
     fi
 }
+USERID=$(id -u)
 
 if [ $USERID -ne 0 ]
 then
@@ -20,10 +22,10 @@ then
     exit 1
 fi
 
-yum install mysql -y
+yum install mysql -y &>>$LOGFILE
 
 VALIDATE $? "Installing mysql"
 
-yum install postfix -y
+yum install postfix -y &>>$LOGFILE
 
 VALIDATE $? "Installing postfix"
