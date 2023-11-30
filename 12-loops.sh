@@ -12,7 +12,8 @@ N="\e[0m"
 Y="\e[33m"
 
 USERID=$(id -u)
-if [ $USERD -ne 0 ]
+
+if [ $USERID -ne 0 ]
 then
     echo "Please run the script as root user"
     exit 1
