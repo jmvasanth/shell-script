@@ -32,7 +32,7 @@ for i in $@
 do
     if rpm -q $i &> /dev/null
     then
-        echo -e " $i package is $Y ALREADY INSTALLED $N"
+        echo -e "Package $i is $Y ALREADY INSTALLED $N"
     else
     yum install $i -y &>>$LOGFILE
     VALIDATE $? "Installing $i"
